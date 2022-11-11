@@ -1,2 +1,2 @@
 # SPRINGBOOT
-Mini projects SpringBoot
+Projects with SpringBoot
