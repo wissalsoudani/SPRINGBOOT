@@ -15,7 +15,6 @@ public interface IClientService {
     Client updateClient(Client c);
     Client retrieveClient(Long id);
 
-    public float getChiffreAffaireParCategorieClient
-            (CategorieClient categorieClient, Date startDate, Date endDate);
+    public float getChiffreAffaireParCategorieClient(CategorieClient categorieClient, Date startDate, Date endDate);
 
 }

@@ -53,7 +53,14 @@ public class IClientServiceImp implements IClientService {
 
     @Override
     public float getChiffreAffaireParCategorieClient(CategorieClient categorieClient, Date startDate, Date endDate) {
-        return 1;
+        try {
+            return clientRepository.getChiffreAffaireParCategorieClient(categorieClient, startDate, endDate);
+        } catch (Exception e) {
+            return 0 ;
+        }
+
+
+
     }
 
 }

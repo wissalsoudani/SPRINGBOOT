@@ -2,11 +2,14 @@ package tn.esprit.Controllers;
 
 import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.web.bind.annotation.*;
+import tn.esprit.Entities.CategorieClient;
 import tn.esprit.Entities.Client;
 import tn.esprit.Entities.Facture;
 import tn.esprit.Services.IClientService;
 import javax.websocket.server.PathParam;
+import java.util.Date;
 import java.util.List;
 
 @AllArgsConstructor
@@ -41,5 +44,13 @@ public class ClientController {
         return iClientService.retrieveClient( idClient);
     }
 
+
+    @GetMapping( "/getChiffreAffaireParCategorieClient/{categorieClient}/{startDate}/{endDate}")
+    public float getChiffreAffaireParCategorieClient(@PathVariable("categorieClient") CategorieClient categorieClient,
+                                                     @PathVariable(name = "startDate") @DateTimeFormat(pattern = "yyyy-MM-dd") Date startDate,
+                                                     @PathVariable(name = "endDate") @DateTimeFormat(pattern = "yyyy-MM-dd") Date endDate) {
+
+        return iClientService.getChiffreAffaireParCategorieClient(categorieClient, startDate, endDate);
+    }
 
 }
