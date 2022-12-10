@@ -12,6 +12,6 @@ public interface IProduitService {
     public Produit getById(Long idProduit);
     void assignProduitToStock(Long idProduit, Long idStock);
     public void assignFournisseurToProduit(Long fournisseurId, Long produitId);
-
+    float getRevenuBrutProduit(Long idProduit, Date startDate, Date endDate);
 
 }

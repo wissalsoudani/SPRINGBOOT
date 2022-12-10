@@ -77,10 +77,11 @@ public class IProduitServiceImp implements IProduitService {
         fournisseurRepository.save(f);
     }
 
-
-
-
-
+    @Override
+    public float getRevenuBrutProduit(Long idProduit, Date startDate, Date endDate) {
+        Produit produit = produitRepository.findById(idProduit).orElse(null);
+        return produitRepository.getRevenuBrutProduit(produit, startDate, endDate);
+    }
 
 
 }
